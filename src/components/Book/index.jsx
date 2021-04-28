@@ -1,8 +1,10 @@
+
+
 import React from "react";
 import Bk from "./Bk";
 import "./Book.scss";
 
-const Book = ({ items }) => {
+const Book = ({ items, index }) => {
   return (
     <div className="books_container">
       {items.map((item) => (

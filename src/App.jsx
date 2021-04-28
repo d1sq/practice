@@ -7,46 +7,52 @@ import axios from "axios";
 
 import { Book, AddBook, Header, MainPage, Authors, Genres } from "./components";
 
-
 function App() {
   const [books, setBooks] = useState(null);
   const [authors, setAuthors] = useState(null);
   const [genres, setGenres] = useState(null);
 
- 
-
   useEffect(() => {
-    axios
-      .get('https://lib.poas45.ru/books')
-      .then(({ data }) => {
-        setBooks(data);
-      });
-    axios.get('https://lib.poas45.ru/authors').then(({ data }) => {
+    axios.get("https://lib.poas45.ru/books").then(({ data }) => {
+      setBooks(data);
+    });
+    axios.get("https://lib.poas45.ru/authors").then(({ data }) => {
       setAuthors(data);
     });
-    axios.get('https://lib.poas45.ru/genres').then(({ data }) => {
+    axios.get("https://lib.poas45.ru/genres").then(({ data }) => {
       setGenres(data);
     });
-}, []);
+  }, []);
+
+  const onAddBook = obj => {
+    const newBooks = [...books, obj];
+    setBooks(newBooks);
+  };
+
+
   return (
     <div className="library">
       <Route path="/">
-      <Header />
+        <Header />
       </Route>
       <Route exact path="/">
-        <MainPage/>
+        <MainPage />
       </Route>
       <Route exact path="/books">
-      {books ? <Book items={books} key={books.id} /> : "Загрузка..."}
+        {books ? <Book items={books} key={Math.random}/> : "Загрузка..."}
       </Route>
       <Route exact path="/authors">
-      {authors ? <Authors items={authors} key={authors.id} /> : "Загрузка..."}
+        {authors ? (
+          <Authors items={authors} key={Math.random()} />
+        ) : (
+          "Загрузка..."
+        )}
       </Route>
       <Route exact path="/genres">
-      {genres ? <Genres items={genres} key={genres.id} /> : "Загрузка..."}
+        {genres ? <Genres items={genres} key={Math.random()} /> : "Загрузка..."}
       </Route>
       <Route exact path="/addbook">
-        <AddBook />
+        <AddBook onAdd={onAddBook} />
       </Route>
     </div>
   );
