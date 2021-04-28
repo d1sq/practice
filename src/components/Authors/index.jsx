@@ -1,14 +1,15 @@
 import React from "react";
-import Bk from "./Bk";
-import "./Book.scss";
+import Author from "./Author";
+import "./Authors.scss";
 
 const Book = ({ items }) => {
   return (
     <div className="books_container">
       {items.map((item) => (
-        <Bk params={item} />
+        <Author params={item} />
       ))}
     </div>
   );
 };
 export default Book;
+
