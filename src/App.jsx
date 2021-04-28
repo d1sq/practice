@@ -5,12 +5,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import axios from "axios";
 
-import { Book, AddBook, Header, MainPage } from "./components";
+import { Book, AddBook, Header, MainPage, Authors, Genres } from "./components";
 
 
 function App() {
   const [books, setBooks] = useState(null);
   const [authors, setAuthors] = useState(null);
+  const [genres, setGenres] = useState(null);
 
  
 
@@ -23,8 +24,10 @@ function App() {
     axios.get('https://lib.poas45.ru/authors').then(({ data }) => {
       setAuthors(data);
     });
+    axios.get('https://lib.poas45.ru/genres').then(({ data }) => {
+      setGenres(data);
+    });
 }, []);
-
   return (
     <div className="library">
       <Route path="/">
@@ -37,11 +40,12 @@ function App() {
       {books ? <Book items={books} key={books.id} /> : "Загрузка..."}
       </Route>
       <Route exact path="/authors">
-      {authors ? <Book items={authors} key={authors.id} /> : "Загрузка..."}
+      {authors ? <Authors items={authors} key={authors.id} /> : "Загрузка..."}
       </Route>
-      <Route exact path="/genres"></Route>
+      <Route exact path="/genres">
+      {genres ? <Genres items={genres} key={genres.id} /> : "Загрузка..."}
+      </Route>
       <Route exact path="/addbook">
-      
         <AddBook />
       </Route>
     </div>

@@ -1,14 +1,14 @@
 import React from "react";
-import Au from "./Author.jsx";
+import Ge from "./Genre.jsx";
 import "../Book/Book.scss"
 
-const Authors = ({ items }) => {
+const Genres = ({ items }) => {
   return (
     <div className="books_container">
       {items.map((item) => (
-        <Au params={item} />
+        <Ge params={item} />
       ))}
     </div>
   );
 };
-export default Authors;
+export default Genres;
