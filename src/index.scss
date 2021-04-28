@@ -1,0 +1,53 @@
+@import 'variables.scss';
+
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $main-text-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url("https://i.imgur.com/BGssb4x.jpg");
+}
+
+.lirary__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0px 0px 10px $shadow-color;
+  background: $background-color;
+  height: 60px;
+  width: 100%;
+
+  &:last-child {
+    flex-grow: 3;
+  }
+}
+
+.header__btn {
+  color: $main-text-color;
+  height: 90%;
+  width: 10vw;
+  background: $secondary-color;
+  border: none;
+  cursor: pointer;
+  margin: 0px 5px 0px 0px;
+
+  &:hover {
+    filter: brightness(1.2)
+  }
+}
+
+
+
+.margin15 {
+  margin-left: 15px;
+}
+
+.pos-right{
+  right: 1;
+}
+

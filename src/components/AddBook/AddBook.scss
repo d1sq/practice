@@ -1,0 +1,45 @@
+.add-book {
+
+    height: 100%;
+    width: 100%;
+    background: #504848;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+    padding: 3px 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+
+
+    .button {
+        background: #0DC172;
+        border-radius: 6px;
+        width: 100%;
+        border: 0;
+        height: 30px;
+    }
+
+
+    .field {
+        background: #ffffff;
+        border: 1px solid #efefef;
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin-bottom: 12px;
+        padding: 8px 12px;
+        width: 100%;
+        &::placeholder{
+            text-align: center;
+        }
+
+    }
+    textarea{
+        resize: none;
+    }
+    .add-book__text{
+        margin-bottom: 3px;
+        color: #fff;
+        font-size: 21px;
+        display: block;
+        text-align: center;
+    }
+}
