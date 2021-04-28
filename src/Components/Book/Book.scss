@@ -17,10 +17,11 @@ body{
     box-shadow: 0px 0px 10px $shadow-color;
     margin: 10px;
     margin-bottom: 40px;
+    color:#2dc4d8;
 }
 
 .list{
-    color: #313131;
+    color: #ffffff;
 }
 li{
     list-style-type: none;
@@ -30,4 +31,5 @@ li{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
