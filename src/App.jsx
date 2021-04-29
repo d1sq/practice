@@ -24,11 +24,12 @@ function App() {
     });
   }, []);
 
-  const onAddBook = obj => {
+  const onAddBook = (obj) => {
     const newBooks = [...books, obj];
     setBooks(newBooks);
   };
 
+  
 
   return (
     <div className="library">
@@ -39,17 +40,28 @@ function App() {
         <MainPage />
       </Route>
       <Route exact path="/books">
-        {books ? <Book items={books} key={Math.random}/> : "Загрузка..."}
+        {books ? (
+          <Book
+          onRemove={id => {
+            const newLists = books.filter(item => item.id !== id);
+            setBooks(newLists);
+          }}
+            items={books}
+            
+          />
+        ) : (
+          "Загрузка..."
+        )}
       </Route>
       <Route exact path="/authors">
         {authors ? (
-          <Authors items={authors} key={Math.random()} />
+          <Authors items={authors} />
         ) : (
           "Загрузка..."
         )}
       </Route>
       <Route exact path="/genres">
-        {genres ? <Genres items={genres} key={Math.random()} /> : "Загрузка..."}
+        {genres ? <Genres items={genres} /> : "Загрузка..."}
       </Route>
       <Route exact path="/addbook">
         <AddBook onAdd={onAddBook} />
