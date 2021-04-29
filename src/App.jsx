@@ -55,7 +55,10 @@ function App() {
       </Route>
       <Route exact path="/authors">
         {authors ? (
-          <Authors items={authors} />
+          <Authors onRemove={id => {
+            const newAuthors = books.filter(item => item.id !== id);
+            setBooks(newAuthors);
+          }} items={authors} />
         ) : (
           "Загрузка..."
         )}
