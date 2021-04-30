@@ -3,7 +3,7 @@ import "../Book/Book.scss";
 import axios from "axios";
 const Authors = ({ items, onRemove }) => {
   const removeAuthor = (item) => {
-    if (window.confirm("Вы действительно хотите удалить автора?")) {
+    if (window.confirm("Вы действительно хотите удалить список?")) {
       axios.delete("https://lib.poas45.ru/authors/" + item.id).then(() => {
         onRemove(item.id);
       });

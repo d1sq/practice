@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Book = ({ items, onRemove }) => {
   const removeBook = (item) => {
-    if (window.confirm("Вы действительно хотите удалить книгу?")) {
+    if (window.confirm("Вы действительно хотите удалить список?")) {
       axios.delete("https://lib.poas45.ru/books/" + item.id).then(() => {
         onRemove(item.id);
       });
