@@ -23,7 +23,7 @@ body {
   justify-content: flex-start;
   box-shadow: 0px 0px 10px $shadow-color;
   background: $background-color;
-  height: 60px;
+  height: $header-height;
   width: 100%;
 
   &:last-child {
