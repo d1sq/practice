@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className="lirary__header">
       <Link to={`/`}>
-      <Button label="Main page" className="button-secondary margin15" />
+      <Button label="Main" className="button-secondary margin15" />
       </Link>
       <Link to={`/books`}>
         <Button label="Books" className="button-secondary margin15" />
@@ -17,7 +18,7 @@ const Header = () => {
         <Button label="Genres" className="button-warning margin15" />
       </Link>
       <Link to={`/addbook`}>
-        <Button label="Add book" className="button-warning margin15" />
+        <Button label="Add" className="button-warning margin15" />
       </Link>
     </div>
   );
