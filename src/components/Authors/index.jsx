@@ -13,19 +13,19 @@ const Authors = ({ items, onRemove }) => {
   return (
     <div className="books_container">
       {items.map((item) => (
-        <div key={item.id} class="book_container">
+        <div key={item.id} className="book_container">
           <img
             className="imgH"
             src="https://i.imgur.com/hIzK95S.jpg"
             alt="img"
           />
-          <button onClick={() => removeAuthor(item)} class="delete_button">
+          <button onClick={() => removeAuthor(item)} className="delete_button">
             X
           </button>
-          <div class="book__content_container">
-            <div class="book_name">{item.first_name}</div>
-            <div class="book_name2">{item.patronymic}</div>
-            <div class="book_year">{item.last_name}</div>
+          <div className="book__content_container">
+            <div className="book_name">{item.first_name}</div>
+            <div className="book_name2">{item.patronymic}</div>
+            <div className="book_year">{item.last_name}</div>
           </div>
         </div>
       ))}
@@ -33,10 +33,3 @@ const Authors = ({ items, onRemove }) => {
   );
 };
 export default Authors;
-// <div key={item.id} className="book_container">
-//   <img className="imgH" src="https://i.imgur.com/hIzK95S.jpg" alt="img" />
-//   <div className="">{item.first_name}</div>
-//   <div className="">{item.patronymic}</div>
-//   <div className="">{item.last_name}</div>
-//   <div onClick={() => removeAuthor(item)}>Delete Author</div>
-// </div>
